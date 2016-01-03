@@ -49,8 +49,8 @@ public class MainActivity extends Activity implements OnClickListener {
     long startTime = 0;
 
     private int sampleAudioRateInHz = 44100;
-    private int imageWidth = 320;
-    private int imageHeight = 240;
+    private int imageWidth = 640;
+    private int imageHeight = 480;
     private int frameRate = 30;
 
     private Thread audioThread;
