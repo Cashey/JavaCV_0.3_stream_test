@@ -39,8 +39,10 @@ public class MainActivity extends Activity implements OnClickListener {
 
     private PowerManager.WakeLock mWakeLock;
 
-	private String ffmpeg_link = "rtmp://live:live@128.122.151.108:1935/live/test.flv";
+	//private String ffmpeg_link = "rtmp://live:live@128.122.151.108:1935/live/test.flv";
     //private String ffmpeg_link = "/mnt/sdcard/new_stream.flv";
+	private String ffmpeg_link = "http://192.168.31.152:8090/feed1.ffm";
+
 	
     private volatile FFmpegFrameRecorder recorder;
     boolean recording = false;
@@ -131,8 +133,11 @@ public class MainActivity extends Activity implements OnClickListener {
         recorder = new FFmpegFrameRecorder(ffmpeg_link, imageWidth, imageHeight, 1);
         Log.v(LOG_TAG, "FFmpegFrameRecorder: " + ffmpeg_link + " imageWidth: " + imageWidth + " imageHeight " + imageHeight);
 
-        recorder.setFormat("flv");
-        Log.v(LOG_TAG, "recorder.setFormat(\"flv\")");
+        //recorder.setFormat("flv");
+        //Log.v(LOG_TAG, "recorder.setFormat(\"flv\")");
+
+        recorder.setFormat("ffm");
+        Log.v(LOG_TAG, "recorder.setFormat(\"ffm\")");
         
         recorder.setSampleRate(sampleAudioRateInHz);
         Log.v(LOG_TAG, "recorder.setSampleRate(sampleAudioRateInHz)");
